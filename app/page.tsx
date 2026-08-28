@@ -120,11 +120,13 @@ function FeatureCard({
 }) {
   return (
     <div className="rounded-xl border border-border/60 bg-card/60 p-5 text-left backdrop-blur-sm transition hover:border-border">
-      <div className="mb-3 inline-flex size-8 items-center justify-center rounded-lg bg-primary/10">
-        {icon}
+      <div className="mb-2 flex items-center gap-3">
+        <div className="inline-flex size-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
+          {icon}
+        </div>
+        <p className="text-sm font-medium text-foreground">{title}</p>
       </div>
-      <p className="text-sm font-medium text-foreground">{title}</p>
-      <p className="mt-1 text-xs text-muted-foreground">{body}</p>
+      <p className="text-xs text-muted-foreground">{body}</p>
     </div>
   )
 }
