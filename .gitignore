@@ -16,26 +16,45 @@
 # next.js
 /.next/
 /out/
+next-env.d.ts
 
 # production
 /build
 
 # misc
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.pem
 
-# debug
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
+# caches
+.eslintcache
+.turbo/
+.cache/
+
+# editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# env files — commit .env.example only
 .env*
+!.env.example
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# local downloads / bundles (do not commit any Node runtime we shipped in the repo dir)
+/node-v*/
+
