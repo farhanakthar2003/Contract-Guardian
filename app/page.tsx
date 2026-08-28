@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import { ArrowRight, ShieldCheck, FileSignature, Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -23,14 +22,12 @@ export default async function Home() {
       <header className="relative z-10">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center">
-            <Image
+            {/* Plain <img> intentionally — Next.js Image was 404-ing on Render for /logo.png */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/logo.png"
               alt="Contract Guardian"
-              width={400}
-              height={280}
               className="h-10 w-auto"
-              priority
-              unoptimized
             />
           </Link>
           <div className="flex items-center gap-2">
@@ -50,13 +47,8 @@ export default async function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 items-center justify-center px-6">
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-8">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm">
-            <Sparkles className="size-3.5 text-primary" />
-            Foxit &quot;Your Agent Shouldn&apos;t Sign That&quot; · Hackathon build
-          </div>
-
           <h1 className="text-balance text-5xl font-semibold tracking-tight text-foreground sm:text-6xl md:text-7xl">
             It drafts. <span className="text-primary">You decide.</span> It&apos;s signed.
           </h1>
@@ -82,7 +74,12 @@ export default async function Home() {
             </Link>
           </div>
 
-          <div className="mt-20 grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="mt-16 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm">
+            <Sparkles className="size-3.5 text-primary" />
+            Foxit &quot;Your Agent Shouldn&apos;t Sign That&quot; · Hackathon build
+          </div>
+
+          <div className="mt-8 grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
             <FeatureCard
               icon={<Sparkles className="size-4 text-primary" />}
               title="Understands your contract"
