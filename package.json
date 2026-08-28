@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
+    "@foxitsoftware/foxit-pdf-api-mcp-server": "^1.1.2",
     "@hookform/resolvers": "^5.9.1",
     "@langchain/core": "^1.2.8",
     "@langchain/google-genai": "^2.2.0",
